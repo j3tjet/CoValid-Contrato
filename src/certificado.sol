@@ -50,7 +50,7 @@ contract contrato{
         Operacion memory op=Operacion(msg.sender,exportador,msg.value,Estado.Pendiente);
         contadorOperaciones +=1;
         operaciones[contadorOperaciones]=op;
-        opUsuarios[msg.sender]=contadorOperaciones;
+        opUsuarios[msg.sender].push(contadorOperaciones);
         emit nuevaOperacion(msg.sender,exportador,msg.value);
     }
     function validar()external{        
